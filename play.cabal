@@ -1,0 +1,115 @@
+-- This file has been generated from package.yaml by hpack version 0.18.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           play
+version:        0.1.0.0
+author:         Gil Mizrahi
+maintainer:     gilmi@posteo.net
+copyright:      2018 Gil Mizrahi
+license:        Apache-2.0
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    README.md
+
+library
+  hs-source-dirs:
+      src
+  default-extensions: ConstraintKinds DataKinds DeriveFunctor EmptyDataDecls FlexibleContexts KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf PatternGuards PatternSynonyms RankNTypes RecordWildCards NamedFieldPuns ScopedTypeVariables TupleSections ViewPatterns BangPatterns
+  build-depends:
+      base >= 4.7 && < 5
+    , async
+    , containers
+    , dlist
+    , transformers
+    , mtl
+    , text
+    , bytestring
+    , file-embed
+    , vector
+    , lens
+    , bytestring
+    , linear
+    , deepseq
+    , random
+    , stm
+    , async
+    , sdl2
+    , sdl2-gfx
+    , sdl2-image
+    , sdl2-mixer
+    , sdl2-ttf
+  exposed-modules:
+      Play.Engine.Input
+      Play.Engine.ListZipper
+      Play.Engine.Load
+      Play.Engine.Movement
+      Play.Engine.MySDL.MySDL
+      Play.Engine.Runner
+      Play.Engine.ScrollingBackground
+      Play.Engine.Settings
+      Play.Engine.Sprite
+      Play.Engine.State
+      Play.Engine.Types
+      Play.Engine.Utils
+  other-modules:
+      Paths_play
+  default-language: Haskell2010
+
+executable app
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  default-extensions: ConstraintKinds DataKinds DeriveFunctor EmptyDataDecls FlexibleContexts KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf PatternGuards PatternSynonyms RankNTypes RecordWildCards NamedFieldPuns ScopedTypeVariables TupleSections ViewPatterns
+  ghc-options: -Wall -fno-warn-missing-signatures -Werror -O2 -rtsopts -funfolding-use-threshold=16 -optc-O3
+  build-depends:
+      base >= 4.7 && < 5
+    , async
+    , containers
+    , dlist
+    , transformers
+    , mtl
+    , text
+    , bytestring
+    , file-embed
+    , vector
+    , lens
+    , bytestring
+    , linear
+    , deepseq
+    , random
+    , stm
+    , async
+    , sdl2
+    , sdl2-gfx
+    , sdl2-image
+    , sdl2-mixer
+    , sdl2-ttf
+    , base
+    , optparse-generic
+    , play
+  other-modules:
+      Attack
+      Attack.SpiralAttack
+      Bullet
+      Button
+      Enemy
+      Enemy.CrossDown
+      Enemy.Fast
+      Enemy.SideToSideSpiral
+      Enemy.Static
+      GameState
+      Script
+      Script.Boss
+      Script.Introduction
+      Script.Level1
+      Script.Level2
+      Script.Op
+      ShootingBox
+      StartScreen
+      TextBox
+      VN
+  default-language: Haskell2010
